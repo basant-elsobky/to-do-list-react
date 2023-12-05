@@ -43,16 +43,16 @@ function Todo() {
 
     return (
         <>
-            <div className='container todo'>
-                <div className='all'>
+            <div className='container '>
+                <div className='all '>
                     <h1 className='text-center text-capitalize'>todo</h1>
                     <form >
                         <div className='inputs row ' >
-                            <div className='col-md-9 col-sm-12'>
-                                <input name='nametask' ref={input} style={{ width: '70%' }} type='text' placeholder='Add a task.........' />
+                            <div className='col-md-9 col-sm-12 col1' >
+                                <input name='nametask' ref={input} type='text' placeholder='Add a task.........' />
                             </div>
-                            <div className='col-md-3 col-sm-12'>
-                                <button className='col-md-3' onClick={add} ref={addbtn} type='submit' className='ms-auto add'>Add a task</button>
+                            <div className='col-md-3 col-sm-12 '>
+                                <button className='col-md-3' onClick={add} ref={addbtn} type='submit' style={{ width: '100px' }}>Add a task</button>
                             </div>    </div></form>
 
                     {todos.map(({ text, complete }, index) => {
@@ -61,7 +61,6 @@ function Todo() {
                                 <h3 className={complete ? 'done' : ''} ref={parg}>{text}</h3>
                                 <div className='icons ms-auto'>
                                     <span onClick={() => parg.className = done(index)}   >      <FontAwesomeIcon icon={faCheck} /> </span>
-                                    <span>     <FontAwesomeIcon icon={faPenToSquare} /> </span>
                                     <span onClick={() => deleted(index)}><FontAwesomeIcon icon={faXmark} /> </span>
                                 </div>     </div>)
                     })}
